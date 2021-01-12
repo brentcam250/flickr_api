@@ -1,7 +1,17 @@
-<h1>Home Page</h1>
+<h1 class = 'title is-vcentered'>Home Page</h1>
 
 <%= render 'form' %>
 
-Response:
-<%= @list.first.id %>
-<%= render 'photos' %>
+
+<%# if params[:flickr_id].nil? %>
+Please enter a flickr id to see a users photos, or just look at these recent photos
+
+ID: <%= @id %>
+    <% if @list.nil? %>
+    No Photos, maybe bad flickr_id of <%= params[:flickr_id] %>
+    <% else %>
+
+        <%= render 'photos' %>
+
+    <% end %>
+<%# end %>

@@ -1,1 +1,11 @@
-<h2>Photos</h2>
+<h2 class = 'subtitle'>Photos</h2>
+<div class = 'columns'>
+<div class = 'column is-full is-vcentered'>
+    <%= @list.each do |photo| %>
+                <a href=<%= Flickr.url_photopage(photo) %>>
+                    <%= image_tag Flickr.url(photo), loading: 'lazy' %>
+                </a> 
+    <% end %>
+</div>
+
+</div>

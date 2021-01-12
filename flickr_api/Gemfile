@@ -6,6 +6,9 @@ ruby '2.7.0'
 #flickr api 
 gem 'flickr', '~> 2.0', '>= 2.0.2'
 
+#bulma for styling
+gem "bulma-rails", "~> 0.9.1"
+
 #figaro, used for securely handling secret keys used in flickr gem
 gem "figaro"
 
