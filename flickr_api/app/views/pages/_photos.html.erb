@@ -3,7 +3,7 @@
 <div class = 'column is-full is-vcentered'>
     <%= @list.each do |photo| %>
                 <a href=<%= Flickr.url_photopage(photo) %>>
-                    <%= image_tag Flickr.url(photo), loading: 'lazy' %>
+                    <%= image_tag Flickr.url_q(photo), loading: 'lazy' %>
                 </a> 
     <% end %>
 </div>
