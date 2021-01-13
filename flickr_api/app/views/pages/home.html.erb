@@ -8,12 +8,9 @@
 <% if params[:flickr_id].nil? %>
 Please enter a flickr id to see a users photos, or just look at these recent photos
 
-
     <% if @list.nil? %>
-    No Photos, maybe bad flickr_id of <%= params[:flickr_id] %>
-    <% else %>
+        No Photos, maybe bad flickr_id of <%= params[:flickr_id] %>
 
-        
 
     <% end %>
 <% end %>

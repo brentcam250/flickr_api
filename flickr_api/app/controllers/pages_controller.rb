@@ -3,10 +3,15 @@ class PagesController < ApplicationController
         @flickr = Flickr.new(ENV["flickr_key"], ENV["flickr_secret"])
 
         unless params[:flickr_id].nil? || params[:flickr_id].empty?
+            begin 
+                @params = {user_id: params[:flickr_id]}
+                @list = @flickr.people.getPhotos(@params)
+            rescue Flickr::FailedResponse => e 
+                flash.now.notice = "No user found "
+                #just output the recent photos in this case
+                @list = @flickr.photos.getRecent
 
-            @params = {user_id: params[:flickr_id]}
-            @list = @flickr.people.getPhotos(@params)
-
+            end
 
         else
             @list = @flickr.photos.getRecent
